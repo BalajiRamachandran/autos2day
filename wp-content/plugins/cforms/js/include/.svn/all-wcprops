@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include
+END
+lib_database_deleteentry.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/lib_database_deleteentry.php
+END
+lib_database_savedata.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/lib_database_savedata.php
+END
+lib_database_dlentries.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/lib_database_dlentries.php
+END
+checkboxgroup.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/checkboxgroup.php
+END
+lib_database_deleteentries.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/lib_database_deleteentries.php
+END
+fieldsetstart.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/fieldsetstart.php
+END
+lib_database_overview.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/lib_database_overview.php
+END
+data.tmp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/data.tmp
+END
+lib_database_loaddata.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/lib_database_loaddata.php
+END
+lib_database_getentries.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/lib_database_getentries.php
+END
+checkbox.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/checkbox.php
+END
+textonly.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/textonly.php
+END
+textfield.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/textfield.php
+END
+selectbox.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/selectbox.php
+END
+installpreset.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/installpreset.php
+END
+html5field.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/js/include/html5field.php
+END

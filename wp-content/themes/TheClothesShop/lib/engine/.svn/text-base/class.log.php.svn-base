@@ -1,0 +1,38 @@
+<?php
+Class log { 
+  // 
+  function get_error_log($type, $file=''){
+    if ( $file ) {
+      $filename = $file;      
+    }
+    switch($type) {
+      case 'user' :
+        $filename .= 'Site_User_errors_' . date('Ymd');
+        return sys_get_temp_dir() . '/' . $filename . '.log'; 
+      break;
+      case 'general' :
+        $filename .= 'Site_General_errors_'  . date('Ymd');
+        return sys_get_temp_dir() . '/' . $filename . '.log'; 
+      break;
+    } 
+  }
+  /* 
+   User Errors... 
+  */ 
+    public function user($msg,$username) 
+    { 
+    $date = date('d.m.Y h:i:s'); 
+    $log = "Date:  ". $date . " | " . $msg . " | User: ".$username."\r\n"; 
+    error_log($log, 3, self::get_error_log('user')); 
+    } 
+    /* 
+   General Errors... 
+  */ 
+    public function general($msg, $file='') 
+    { 
+    $date = date('d.m.Y h:i:s'); 
+    $log = "Date: " . $date . " | " . $msg ."\r\n"; 
+    error_log($log, 3, self::get_error_log('general', $file)); 
+    } 
+} 
+?>

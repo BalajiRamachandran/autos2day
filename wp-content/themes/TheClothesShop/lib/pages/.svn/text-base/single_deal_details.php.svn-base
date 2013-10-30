@@ -1,0 +1,22 @@
+<?php
+
+	echo "<table width='100%' class='deal_info_display'>";
+	echo "<tr>";
+	echo "<th>Year</th>";
+	echo "<th>Make</th>";
+	echo "<th>Model</th>";
+	echo "<th>Trim</th>";
+	echo "<th>Color</th>";
+	echo "<th>Price</th>";
+	echo "</tr>";
+	echo "<tr>";
+	echo "<td>" . get_custom_field("ad_year")  . "</td>";
+	echo "<td>" . get_custom_field("ad_make")  . "</td>";
+	echo "<td>" . get_custom_field("ad_model")  . "</td>";
+	echo "<td>" . get_custom_field("ad_trim")  . "</td>";
+	echo "<td>" . get_custom_field("ad_color")  . "</td>";
+	echo "<td>" .$OPTION['wps_currency_symbol'] . format_price(get_custom_field('ad_price')) . "</td>";
+	echo "</tr>";
+	echo "</table>";
+	echo "<h2>Description</h2>";
+?>

@@ -1,0 +1,15 @@
+<?php
+	$current_user = wp_get_current_user();
+	$args = array( 
+		'numberposts' => null, 
+		'orderby'     => 'post_date',
+		'post_status' 	=>	'any',
+		'post_parent'	=>	0
+	);
+	// if non admin limit to their posts
+	if ( ! current_user_can( 'administrator' ) ) {
+		$args['post_author'] = $current_user->ID;
+	} else {
+		$args['post_status'] = 'null';
+	}
+?>

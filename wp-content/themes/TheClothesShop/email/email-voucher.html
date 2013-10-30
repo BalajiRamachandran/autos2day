@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+    body { 
+    	font-size: 100.01%; font-family: arial, verdana, sans-serif; margin: 10%; 
+    	-moz-box-shadow: 5px 10px 5px #000000; 
+    	-webkit-box-shadow: 5px 10px 5px #000000; 
+    	box-shadow: 5px 10px 5px #000000; 
+    	} 
+    #header { 
+    	margin-bottom: 40px; 
+    } 
+    #header span { 
+    	color:navy; font-size:48px; 
+    } 
+    #footer { 
+    	font-size: 8px; border-top: 1px solid black; 
+    } table { width: 100%; font-size: 0.8em; } th { background-color: silver; } 
+    .gradient1 { /*background:-webkit-gradient(linear, 80% 20%, 10% 21%, from(#866400), to(#FF4E28)) */ }
+    #content {
+    	border : 1px solid;
+    	padding: 10px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="content">
+    <div id="header">
+      <img src="%5B##Email-Logo##%5D" />
+      <span>[##biz##]</span>
+    </div>Hello [##name##], 
+    <br />
+    <br />Thanks for your interest in [##biz##] Deals. And you have provided the following contact details. 
+    <ul>
+      <li>Deal: [##title##]</li>
+    	<li>Name: [##name##]</li>
+    	<li>Email: [##email##]</li>
+    	<li>Phone: [##phone##]</li>
+    </ul>
+    <br />
+    <br />
+    Your requested voucher is below: 
+    <br />
+    <br />
+    <table class="content">
+      <tbody>
+        <tr>
+          <th colspan="2">Voucher Details</th>
+        </tr>
+        <tr class="gradient1">
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td class='year'>[##ad_year##] [##ad_make##]</td>
+                </tr>
+                <tr>
+                  <td class='model'>[##ad_model##] [##ad_trim##]</td>
+                </tr>
+                <tr>
+                  <td class='color'>[##ad_color##]</td>
+                </tr>
+                <tr>
+                  <td class='price'>$ [##ad_price##]</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>[##dealership_name##]</td>
+                </tr>
+                <tr>
+                  <td>[##dealership_address_line_1##]</td>
+                </tr>
+                <tr>
+                  <td>[##dealership_address_city##], [##dealership_address_state##] [##dealership_address_zipcode##]</td>
+                </tr>
+                <tr>
+                  <td>[##dealership_address_country##]</td>
+                </tr>
+                <tr>
+                  <td>Phone: [##dealership_phone##]</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- Clear -->
+          </td>
+        </tr>
+        <tr class="gradient1">
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td colspan="2">VIN</td>
+                  <td>[##ad_vin##]</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <strong>VOUCHER</strong>
+                  </td>
+                  <td>
+                    <strong>[##voucher_code##]</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <img src="[##qr_code##]" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />Best regards, 
+    <br />[##biz##] 
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="footer">Footer</div></div>
+  </body>
+</html>

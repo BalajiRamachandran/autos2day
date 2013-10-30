@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/lib/Zend/Mail/Transport
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/lib/Zend/Mail/Transport/Exception.php
+END
+Abstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/lib/Zend/Mail/Transport/Abstract.php
+END
+Smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/lib/Zend/Mail/Transport/Smtp.php
+END
+Sendmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/lib/Zend/Mail/Transport/Sendmail.php
+END

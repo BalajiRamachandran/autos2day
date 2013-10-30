@@ -1,0 +1,48 @@
+/*
+* I give up with IE6!! 
+* This is how far a I get with fixing the most stupid browser on earth. Not all bugs are fixed and I will not fix any more than this.
+* Get yourselves a decent browser people!
+*/
+
+/* the prod boxes look funny - give has layout*/
+.theCats .contentWrap, .theProds .contentWrap, .theTags .contentWrap  {height:1%;}
+
+/*too much vertical whitespace in lists and links in lists*/
+.pageCont .c_box li, .widget ul li, .subsubcatnavi li, .subsubcatnavi a {display:inline-block;}
+
+/* cannot take a semi-trasparent png so give is a solid colour*/
+.widget_faq ul, .csw, .widgetPadding, .step1 h4, .step2 h4, h4.step3, h4.step4  {background:#503633;}
+
+/*registration page*/
+#pt1 {background:url(images/st1_ie6.png) no-repeat top left;}
+#pt2 {background:url(images/st2_ie6.png) no-repeat top left;}
+#pt3 {background:url(images/st3_ie6.png) no-repeat top left;}
+
+/*single page view*/
+/*the image tabs had too much white space below*/
+.tabsWrapAlt li {display:inline-block;}
+#footnotes li {width:24.99%;}
+
+.related .tabs, .videotabs  {float:left;width:375px;}
+.related, .related .panes {height:1%;}
+
+.adjacentImg  {width:81px;}
+.previousProd .adjacentImg {left:0;}
+
+
+/*shopping cart*/
+.updateCartActionBtn {margin-left:268px;}
+
+/*the overlays*/
+.overlay {background:url(images/offwhite_ie6.png) no-repeat;}
+.mediumoverlay {background:url(images/offwhitemedium_ie6.png) no-repeat;}
+.largeoverlay {background:url(images/offwhitelarge_ie6.png) no-repeat;}
+.overlay .close {background:url(images/close_ie6.png) no-repeat;}
+
+/*the secondary content on front page*/
+.secondary_content .c_box3 {margin-left:0;}
+.secondary_content .c_box_middle {margin:0 14px;}
+
+/*blog posts*/
+/*I cannot positions a -trans image! It always begins top-left so reverse order!*/
+.blogPost .comments-link {padding-right:0px;width:60px;}

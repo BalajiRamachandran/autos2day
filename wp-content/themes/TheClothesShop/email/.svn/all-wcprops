@@ -1,0 +1,539 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email
+END
+fr_FR-email-new-inquiry.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-new-inquiry.html
+END
+de_DE-email-download-links.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-download-links.html
+END
+it_IT-email-new-inquiry-thanks.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-new-inquiry-thanks.html
+END
+en_US-email-new-inquiry-thanks.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-new-inquiry-thanks.html
+END
+fr_FR-email-owner-new-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-owner-new-pending-payment.txt
+END
+de_DE-email-new-inquiry.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-new-inquiry.html
+END
+nl_NL-email-download-links.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-download-links.html
+END
+en_US-email-shipping.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-shipping.html
+END
+email-confirmation.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-confirmation.html
+END
+email-owner-low-stock-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-owner-low-stock-warning.txt
+END
+de_DE-email-new-user-owner-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-new-user-owner-notification.txt
+END
+nl_NL-email-new-user-owner-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-new-user-owner-notification.txt
+END
+nl_NL-email-password-reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-password-reset.txt
+END
+fr_FR-email-owner-order-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-owner-order-notification.txt
+END
+en_US-email-new-inquiry.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-new-inquiry.html
+END
+en_US-email-new-inquiry-thanks.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-new-inquiry-thanks.txt
+END
+en_US-email-confirmation.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-confirmation.html
+END
+de_DE-email-owner-order-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-owner-order-notification.txt
+END
+email-new-inquiry.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-new-inquiry.txt
+END
+email-confirmation.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-confirmation.txt
+END
+en_US-email-password-reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-password-reset.txt
+END
+fr_FR-email-new-user-welcome.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-new-user-welcome.txt
+END
+de_DE-email-new-user-welcome.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-new-user-welcome.txt
+END
+it_IT-email-confirmation.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-confirmation.txt
+END
+en_US-email-owner-order-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-owner-order-notification.txt
+END
+nl_NL-email-owner-lkey-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-owner-lkey-warning.txt
+END
+de_DE-email-new-inquiry-thanks.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-new-inquiry-thanks.html
+END
+email-voucher.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-voucher.html
+END
+fr_FR-email-shipping.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-shipping.html
+END
+nl_NL-email-new-inquiry-thanks.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-new-inquiry-thanks.html
+END
+en_US-email-new-user-welcome.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-new-user-welcome.txt
+END
+en_US-email-owner-lkey-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-owner-lkey-warning.txt
+END
+it_IT-email-owner-completed-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-owner-completed-pending-payment.txt
+END
+en_US-email-owner-completed-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-owner-completed-pending-payment.txt
+END
+fr_FR-email-owner-low-stock-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-owner-low-stock-warning.txt
+END
+fr_FR-email-confirmation.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-confirmation.html
+END
+email-download-links.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-download-links.html
+END
+email-new-inquiry-thanks.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-new-inquiry-thanks.txt
+END
+email-new-user-owner-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-new-user-owner-notification.txt
+END
+email-password-reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-password-reset.txt
+END
+fr_FR-email-confirmation.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-confirmation.txt
+END
+it_IT-email-owner-new-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-owner-new-pending-payment.txt
+END
+de_DE-email-confirmation.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-confirmation.txt
+END
+it_IT-email-password-reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-password-reset.txt
+END
+en_US-email-confirmation.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-confirmation.txt
+END
+de_DE-email-owner-completed-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-owner-completed-pending-payment.txt
+END
+email-owner-lkey-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-owner-lkey-warning.txt
+END
+nl_NL-email-owner-completed-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-owner-completed-pending-payment.txt
+END
+email-new-inquiry-thanks.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-new-inquiry-thanks.html
+END
+it_IT-email-owner-lkey-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-owner-lkey-warning.txt
+END
+fr_FR-email-download-links.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-download-links.html
+END
+de_DE-email-owner-new-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-owner-new-pending-payment.txt
+END
+it_IT-email-shipping.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-shipping.html
+END
+nl_NL-email-new-inquiry.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-new-inquiry.html
+END
+fr_FR-email-password-reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-password-reset.txt
+END
+nl_NL-email-owner-new-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-owner-new-pending-payment.txt
+END
+de_DE-email-password-reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-password-reset.txt
+END
+it_IT-email-confirmation.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-confirmation.html
+END
+it_IT-email-owner-low-stock-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-owner-low-stock-warning.txt
+END
+en_US-email-owner-low-stock-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-owner-low-stock-warning.txt
+END
+nl_NL-email-owner-order-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-owner-order-notification.txt
+END
+fr_FR-email-owner-lkey-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-owner-lkey-warning.txt
+END
+de_DE-email-owner-lkey-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-owner-lkey-warning.txt
+END
+fr_FR-email-new-inquiry-thanks.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-new-inquiry-thanks.html
+END
+en_US-email-new-inquiry.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-new-inquiry.txt
+END
+nl_NL-email-new-user-welcome.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-new-user-welcome.txt
+END
+email-owner-completed-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-owner-completed-pending-payment.txt
+END
+de_DE-email-shipping.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-shipping.html
+END
+nl_NL-email-shipping.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-shipping.html
+END
+de_DE-email-owner-low-stock-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-owner-low-stock-warning.txt
+END
+de_DE-email-confirmation.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/de_DE-email-confirmation.html
+END
+email-new-inquiry.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-new-inquiry.html
+END
+fr_Fr-email-new-user-owner-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_Fr-email-new-user-owner-notification.txt
+END
+nl_NL-email-confirmation.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-confirmation.html
+END
+nl_NL-email-owner-low-stock-warning.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-owner-low-stock-warning.txt
+END
+email-owner-new-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-owner-new-pending-payment.txt
+END
+it_IT-email-download-links.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-download-links.html
+END
+en_US-email-download-links.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-download-links.html
+END
+it_IT-email-new-inquiry.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-new-inquiry.html
+END
+en_US-email-owner-new-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-owner-new-pending-payment.txt
+END
+email-owner-order-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-owner-order-notification.txt
+END
+it_IT-email-new-user-owner-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-new-user-owner-notification.txt
+END
+en_US-email-new-user-owner-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/en_US-email-new-user-owner-notification.txt
+END
+nl_NL-email-confirmation.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/nl_NL-email-confirmation.txt
+END
+fr_FR-email-owner-completed-pending-payment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/fr_FR-email-owner-completed-pending-payment.txt
+END
+it_IT-email-owner-order-notification.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-owner-order-notification.txt
+END
+email-new-user-welcome.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-new-user-welcome.txt
+END
+it_IT-email-new-user-welcome.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/it_IT-email-new-user-welcome.txt
+END
+email-shipping.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/themes/TheClothesShop/email/email-shipping.html
+END

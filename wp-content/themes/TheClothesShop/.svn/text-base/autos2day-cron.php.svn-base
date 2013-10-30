@@ -1,0 +1,29 @@
+<?php
+
+/* setup cron job */
+   include dirname(__FILE__) . '/../../../wp-load.php';
+   include (TEMPLATEPATH . "/lib/pages/get_posts_list.php");	
+
+	$myposts = get_posts( $args );
+	foreach( $myposts as $post ) :	setup_postdata ( $post );
+
+	$post_meta			= get_post_custom ( $post->ID );
+
+	//check deal-date and expiration-time
+	validate_exp_deal_date ( $post->ID, $post->post_date );
+
+	if ( validate_deal_date ( $post_meta )  ) {
+		echo __LINE__ . ' processing deal\n';
+		echo __LINE__ . ' processing deal ' . $post->ID . ' ' . $post->post_status ;
+		if ( $post->post_status == "approved" ) {
+			$post->post_status = "publish";
+			wp_update_post ( $post );
+		} else {
+			echo __LINE__ . ' skipping deal ' . $post->ID . ' ' . $post->post_status ;
+		}
+	} else {
+		set_deal_expiration ( $post, $post_meta );
+	}
+
+	endforeach;
+?>

@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms
+END
+lib_WPcomment.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_WPcomment.php
+END
+____REQUIREMENTS.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/____REQUIREMENTS.txt
+END
+lib_email_php4.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_email_php4.php
+END
+lib_ajax.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_ajax.php
+END
+lib_editor.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_editor.php
+END
+update-pre-9.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/update-pre-9.php
+END
+lib_dashboard.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_dashboard.php
+END
+cforms-help.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-help.php
+END
+cforms-admin.css
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-admin.css
+END
+____INSTALL_UPDATE_NOTE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/____INSTALL_UPDATE_NOTE.txt
+END
+lib_aux.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_aux.php
+END
+____LICENSE_CREDITS.txt
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/____LICENSE_CREDITS.txt
+END
+lib_activate.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_activate.php
+END
+lib_options_err.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_options_err.php
+END
+my-functions.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/my-functions.php
+END
+lib_functions.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_functions.php
+END
+cforms-corrupted.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-corrupted.php
+END
+lib_options_del.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_options_del.php
+END
+____gpl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/____gpl.txt
+END
+lib_email.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_email.php
+END
+cforms-css.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-css.php
+END
+lib_validate.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_validate.php
+END
+lib_ajax_admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_ajax_admin.php
+END
+abspath.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/abspath.php
+END
+cforms-options.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-options.php
+END
+cforms-example-comments.php.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-example-comments.php.txt
+END
+lib_nonajax.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_nonajax.php
+END
+____HISTORY.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/____HISTORY.txt
+END
+cforms-global-settings.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-global-settings.php
+END
+lib_options_up.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_options_up.php
+END
+lib_options_presets.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_options_presets.php
+END
+lib_options_dup.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_options_dup.php
+END
+lib_options_add.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_options_add.php
+END
+cforms.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms.php
+END
+cforms-captcha.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-captcha.php
+END
+lib_options_sub.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/lib_options_sub.php
+END
+cforms-database.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/cforms-database.php
+END

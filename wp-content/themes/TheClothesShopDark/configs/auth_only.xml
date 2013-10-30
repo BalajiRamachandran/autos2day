@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<createCustomerProfileTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name>_login_</name>
+    <transactionKey>_trans_key_</transactionKey>
+  </merchantAuthentication>
+  <transaction>
+    <profileTransAuthOnly>
+      <amount>_amount_</amount>
+      <lineItems>
+        <itemId>1</itemId>
+        <name>_name_</name>
+        <description>_VIN_</description>
+        <quantity>1</quantity>
+        <unitPrice>_amount_</unitPrice>
+      </lineItems>
+      <customerProfileId>_customerProfileId_</customerProfileId>
+      <customerPaymentProfileId>_customerPaymentProfileId_</customerPaymentProfileId>
+      <order>
+        <invoiceNumber>_invoice_no_</invoiceNumber>
+        <description>_dealid_ _post_title_</description>
+        <purchaseOrderNumber>_po_</purchaseOrderNumber>
+      </order>
+      <recurringBilling>false</recurringBilling>
+    </profileTransAuthOnly>
+  </transaction>
+  <extraOptions>
+    <![CDATA[x_customer_ip=_customer_ip_&x_authentication_
+indicator=5]]>
+</extraOptions>
+</createCustomerProfileTransactionRequest>

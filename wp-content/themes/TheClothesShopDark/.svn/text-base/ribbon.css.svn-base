@@ -1,0 +1,179 @@
+/* Ribbon */
+
+/* ribbon style */
+
+/*
+
+		<div class="ribbon-wrapper">
+			<div class="ribbon-front">
+				<a href="#" class="review_status publish">publish</a>
+			</div>
+	<!-- 		<div class="ribbon-edge-topleft"></div>
+	 -->		<div class="ribbon-edge-topright"></div>
+			<div class="ribbon-edge-bottomleft"></div>
+			<div class="ribbon-edge-bottomright"></div>
+	<!-- 		<div class="ribbon-back-left"></div>
+			<div class="ribbon-back-right"></div> -->
+		</div>
+		<div class="ribbon-wrapper">
+			<div class="ribbon-front">
+				<a href="#" class="review_status trash">trash</a>
+			</div>
+	<!-- 		<div class="ribbon-edge-topleft"></div>
+	 -->		<div class="ribbon-edge-topright"></div>
+			<div class="ribbon-edge-bottomleft"></div>
+			<div class="ribbon-edge-bottomright"></div>
+	<!-- 		<div class="ribbon-back-left"></div>
+			<div class="ribbon-back-right"></div> -->
+		</div>
+
+*/
+
+/* ribbon style */
+
+/* ribbon style */
+
+ .ribbon-wrapper {
+	position: relative;
+	float: right;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+  .ribbon-front {
+	background-color: #FF0000;/*#ccf;*/	height: 30px;
+	width: 140px;
+	position: relative;
+	left:-20px;
+	z-index: 2;
+}
+
+  .ribbon-front,
+  .ribbon-back-left,
+  .ribbon-back-right
+{
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+	position: absolute;
+	z-index: 1;
+	border-style:solid;
+	height:0px;
+	width:0px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright {
+}
+
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+	top: 40px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-bottomleft {
+	left: -20px;
+	/*border-color: transparent #99c transparent transparent;*/
+	border-color: transparent #FFFFFF transparent transparent;
+}
+
+  .ribbon-edge-topleft {
+	top: -10px;
+	border-width: 10px 20px 0 0;
+}
+  .ribbon-edge-bottomleft {
+	border-width: 0 20px 0px 0;
+}
+
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomright {
+	left: 100px;
+	left: 60px;
+	border-color: transparent transparent transparent white;/*#99c;*/
+}
+
+  .ribbon-edge-topright {
+	top: -10px;
+	border-width: 10px 0 0 20px;
+}
+  .ribbon-edge-bottomright {
+	border-width: 0 0 0px 20px;
+}
+
+  .ribbon-back-left {
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	width: 0px;
+	height: 20px;
+		z-index: 0;
+}
+
+  .ribbon-back-right {
+	position: absolute;
+	top: -10px;
+	right: 0px;
+	width: 0px;
+	height: 20px;
+		z-index: 0;
+}
+
+.ribbon-front {
+	background-color: red;
+	height: 22px;
+	width: 140px;
+	width: 100px;
+	position: relative;
+	left: -20px;
+	z-index: 2;
+}
+.ribbon-wrapper {
+	position: relative;
+	float: right;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	direction: 30;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	margin-top: 30px;
+	margin-top: 36px;
+	margin-right: -56px;
+	margin-right: -30px;
+}
+.ribbon-wrapper {
+position: relative;
+float: right;
+margin-bottom: 10px;
+margin-left: 10px;
+direction: 30;
+transform: rotate(42deg);
+-ms-transform: rotate(42deg);
+-webkit-transform: rotate(42deg);
+-o-transform: rotate(42deg);
+-moz-transform: rotate(42deg);
+margin-top: 30px;
+margin-top: 32px;
+margin-right: -56px;
+margin-right: -32px;
+}
+
+.ribbon-front {
+background-color: 
+red;
+height: 22px;
+width: 140px;
+width: 100px;
+position: relative;
+left: -20px;
+z-index: 2;
+}

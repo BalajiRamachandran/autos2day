@@ -1,0 +1,74 @@
+<?php
+		$logged_in_user = $current_user->ID;
+		$log->general("Logged in User: " . $logged_in_user);
+		$log->general("Setting deal-date: " . date(get_option('expiration_format')));
+		validate_exp_deal_date ( $post_id, date(get_option('expiration_format')));
+		//update_post_meta($id, 'expiration-date', $ts);
+		foreach ($meta_args as $k => $v) {
+			if ( $k != "cc" ) {
+				update_post_meta($post_id, $k, $v);	
+			}
+
+			$_POST['image_resize'] = 'true';
+
+//						upload_attachments ( $_FILES );
+			for ( $count = 0; $count < 5 ; $count += 1 ) {
+				$var = 'upload_images_i' . $count;
+				$target_path = wp_upload_dir();
+
+
+			    $file_array = array(
+			        'name'      => $post_id . '_' . substr(md5($_FILES[$var]['name']), '-3') . $_FILES[$var]['name'],
+			        'type'      => $_FILES[$var]['type'],
+			        'tmp_name'  => $_FILES[$var]['tmp_name'],
+			        'error'     => $_FILES[$var]['error'],
+			        'size'      => $_FILES[$var]['size']
+			    );
+
+			    if ( !empty( $file_array['name'] ) ) {
+			        // upload the file to the server									        
+			        $upload_overrides = array ( 'test_form' => false );
+			        $uploaded_file = wp_handle_upload( $file_array, $upload_overrides );
+			        // checks the file type and stores in in a variable
+			        $wp_filetype = wp_check_filetype( basename( $uploaded_file['file'] ), null );   
+			        // set up the array of arguments for "wp_insert_post();"
+
+			        //wp_handle_upload
+			        //image_resize
+			        $attachment = array(
+			            'post_mime_type' => $wp_filetype['type'],
+			            'post_title' => preg_replace('/\.[^.]+$/', '', basename( $uploaded_file['file'] ) ),
+			            'post_content' => '',
+			            'post_author' => $logged_in_user,
+			            'post_status' => 'inherit',
+			            'post_type' => 'attachment',
+			            'post_parent' => $post_id,
+			            'guid' => $target_path['baseurl'] . '/' . $file_array['name']
+			        );
+
+			        // insert the attachment post type and get the ID
+			        $attachment_id = wp_insert_post( $attachment );
+			        // generate the attachment metadata
+			        $attach_data = wp_generate_attachment_metadata( $attachment_id, $uploaded_file['file'] );
+			        // update the attachment metadata
+			        wp_update_attachment_metadata( $attachment_id,  $attach_data );
+
+			    } // end if ( !empty( $file_array['name'] ) )
+			} // end for ( $count = 0; $count < 5 ; $count += 1 )
+			
+		}
+
+
+		// Sucessfull message
+		$return .= '<div id="wpip-message" class="wpip-success">' . __( 'Entry successfull added!', 'wp-insert-post' ) . '<br/><a href="' . get_permalink() . '">' . __( 'Add another &raquo;', 'wp-insert-post' ) . '</a></div>';
+
+		// Redirect
+		$return .= '
+			<script type="text/javascript">
+				setTimeout( "location.href = \'' . get_permalink() . '\';", 2000 );
+			</script>
+		';
+?>
+	<script type="text/javascript">
+		jQuery(".modal").hide();
+	</script>

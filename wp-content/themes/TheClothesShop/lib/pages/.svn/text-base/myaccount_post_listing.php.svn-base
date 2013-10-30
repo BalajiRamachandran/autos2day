@@ -1,0 +1,81 @@
+<?php
+	echo '<div class="theProds clearfix theProds_alt alignleft">';
+	foreach( $myposts as $post ) :	setup_postdata ( $post );
+		//echo '<br/>post_status: ' . $post->post_status;
+		$post_meta = get_post_custom ($post->ID); 
+
+		if ( $post->post_status == "trash" || $post->post_status == "auto-draft" || $post->post_status == "expired" ) {
+			goto process_next;
+		}
+
+		$current_date = date(get_option('expiration_format'));
+		validate_exp_deal_date ($post->ID, $post->post_date);
+
+		$post_expiration = get_post_meta ($post->ID, 'expiration-time', true);
+		
+		// if expiration-time is not set, lets define this
+
+		if ( strlen($post_expiration) > 0 ) {
+
+		} else {
+			$post_expiration = post_expiration_date ( $post->post_date );
+			// $mktime = strtotime($post->post_date);
+			// $post_expiration = mktime(0, 0, 0, date("m", $mktime)  , date("d", $mktime)+2, date("Y", $mktime));
+		}
+
+		if ( $post_expiration > strtotime($current_date)) {
+			//continue
+			goto process_post;
+		} else {
+			if ( $post->post_status == "publish" ) {
+				$post->post_status = "expired";
+				wp_update_post( $post );
+			}
+			if ( ! current_user_can( 'administrator' ) ) {
+				goto process_next;
+			}
+		}
+		process_post:
+		$post_date = $post->post_date;
+		if (( $post->post_author == $current_user->ID ) || ( current_user_can( 'administrator' ) ) ) {
+			$output = my_attachment_images($post->ID,2);
+			$imgNum = count($output);
+		
+			echo '<div class="post-' . $post->ID . ' post type-post status-publish format-standard hentry category-sedan c_box c_box1_ws c_box_first ">';
+			//added for imageurl for my-account
+			$imgURL		= array();
+			foreach($output as $v){
+			
+				$img_src 	= $v;
+				
+				//unset ( $OPTION['wps_wp_thumb'] );
+
+				// do we want the WordPress Generated thumbs?
+				if ($OPTION['wps_wp_thumb']) {
+					//get the file type
+					$img_file_type = strrchr($img_src, '.');
+					//get the image name without the file type
+					$parts = explode($img_file_type,$img_src);
+					// get the thumbnail dimmensions
+					$width = get_option('thumbnail_size_w');
+					$height = get_option('thumbnail_size_h');
+					//put everything together
+					$imgURL[] = $parts[0].'-'.$width.'x'.$height.$img_file_type;
+				
+				// no? then display the default proportionally resized thumbnails
+				} else {
+					$des_src 	= $OPTION['upload_path'].'/cache';							
+					$img_file 	= mkthumb($img_src,$des_src,$img_size,'width');    
+					$imgURL[] 	= get_option('siteurl').'/'.$des_src.'/'.$img_file;	
+				}
+		
+			}
+			//end: added for imageurl for my-account
+			include (TEMPLATEPATH . '/lib/pages/category_body.php');
+			echo '</div>';
+		} else {
+		}
+		process_next:
+	endforeach; 
+	echo '</div>';
+?>

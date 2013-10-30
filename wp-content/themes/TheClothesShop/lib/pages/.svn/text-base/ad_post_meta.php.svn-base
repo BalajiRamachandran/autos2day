@@ -1,0 +1,19 @@
+<?php
+	$meta_keys = array ( 
+		'ad_year', 
+		'ad_model', 
+		'ad_trim', 
+		'ad_make', 
+		'ad_color', 
+		'ad_vin', 
+		'ad_price', 
+		'ad_miles', 
+		'ad_engine', 
+		'ad_trans', 
+		'ad_trans', 
+		'ad_drive',
+		'ad_pparty',
+		'ad_expiration-date'
+	);
+
+?>

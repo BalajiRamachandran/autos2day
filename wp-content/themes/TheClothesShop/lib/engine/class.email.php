@@ -1,0 +1,700 @@
+<?php
+
+	class Email{
+
+		function email_header($option='text'){	
+					
+		global $OPTION;
+					
+				switch($option){
+				
+					case 'text':
+						$message_head	= $OPTION['wps_email_txt_header'];
+					break;
+				}
+						
+		return $message_head;
+		}	
+		
+		
+		function send_mail($to,$subject,$message,$admin_email_address,$domain){
+			global $OPTION;
+
+			// Subject encoding
+			$subject = encode_email_subject($subject);					
+
+			// Headerangaben
+			$now 	= time();
+			$eol 	= "\r\n";
+			$domain = $OPTION['wps_shop_name'];
+			$domain = str_replace(",",'',$domain); 				//no commas in sender name please
+
+			$headers  = 'MIME-Version: 1.0'.$eol;
+			$headers .= 'Content-type: text/plain; charset="UTF-8"'.$eol;
+			$headers .= 'Content-Transfer-Encoding: 8bit'.$eol;
+			$headers .= "From: $domain <" . $admin_email_address . '>' .$eol;
+			// these two to set reply address
+			$headers .= "Reply-To: $domain <" . $admin_email_address . '>' .$eol;
+			$headers .= "Return-Path: $domain <" . $admin_email_address . '>' .$eol;
+			// to avoid spam-filters
+			$headers .= "X-Mailer: PHP v".phpversion().$eol;        
+			
+			$mail_success = wp_mail($to,$subject,$message,$headers);	
+			
+		return $mail_success;
+		}
+
+		
+		function html_mail($to,$subject,$message,$admin_email_address,$domain, $attachment, $author=''){
+			global $random_hash;
+			global $log;
+			if ( empty ($log)) {
+				$log = load_what_is_needed ("log");
+			}
+			// Subject encoding
+			$subject 	= encode_email_subject($subject);					
+
+			// Headerangaben
+			$now 	= time();
+			$eol 	= "\r\n";
+			$domain = str_replace(",",'',$domain); 			//no commas in sender name please
+			
+			// für HTML-E-Mails muss der 'Content-type'-Header gesetzt werden
+			//$headers  = 'MIME-Version: 1.0' . "\r\n";
+			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+			// if ( isset($attachment)) {
+			// 	$headers .= "\r\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\"";	
+			// }
+			
+			$headers 		.= "From: $domain" . ' <' . $admin_email_address . '>' .$eol;
+			$headers 		.= "cc: " . get_bloginfo('name') . " <" . get_option('cc_admin_email') . ">" . $eol;
+			if ( !empty($author)) {
+				$headers 		.= "cc: " . get_dealer_emails ( $author ) . "\r\n";
+				$headers 		.= "cc: " . get_user_by ( 'id', $author )->user_email . "\r\n";
+			}
+			$log->general("email- headers : " . $headers);
+
+			// print_r($headers);
+
+			// $headers .= "Reply-To: $domain <" . $admin_email_address . '>' .$eol;
+			// $headers .= "Return-Path: $domain <" . $admin_email_address . '>' .$eol;
+			// $headers .= "X-Mailer: PHP v".phpversion().$eol;      
+		 
+			// try {
+			// 	$mail_success = mail (
+			// 					  $to,
+			// 					   $subject,
+			// 					   $message,
+			// 					   $headers
+			// 				  );
+			// } catch ( Exception $e ) {
+			// 	print_r($e);
+			// }
+
+
+			// echo $headers . '<br/>';
+			// echo $message . '<br/>';
+
+
+			try {
+				$mail_success = wp_mail (
+								  $to,
+								   $subject,
+								   $message,
+								   $headers,
+								   $attachment
+							  );
+			} catch ( Exception $e ) {
+				print_r($e);
+			}			
+			return $mail_success;
+		}
+
+		
+		function mime_mail($to,$subject,$message_html,$message_txt,$admin_email_address,$domain,$module='native'){
+			global $OPTION;
+			
+			if($module == 'native'){
+
+					$subject 	= encode_email_subject($subject);	
+					
+					// Generate a boundary string to demarcate different types
+					$mime_boundary 	= "----=_NextPart_X[".md5(time())."]";
+					
+					$headers = "From: $domain <$admin_email_address>\r\n".
+							   "To: <".$to."> \r\n".
+							   "MIME-Version: 1.0\r\n" .
+							   "Content-Type: multipart/alternative; ".
+							   "boundary=\"".$mime_boundary."\"\r\n";
+							   
+					// Add a multipart boundary above the plain message
+					$newline = "\r\n";
+					$message = "This is a multi-part message in MIME format.\r\n\r\n".
+							"--".$mime_boundary."\r\n".
+							"Content-Type: text/plain; charset=\"iso-8859-1\"\r\n".
+							"Content-Disposition: inline\r\n".
+							"Content-Transfer-Encoding: 8bit\r\n\r\n".
+							$message_txt."\r\n\r\n".
+							"--".$mime_boundary."\r\n".
+							"Content-Type: text/html; charset=\"iso-8859-1\"\r\n".
+							"Content-Disposition: inline\r\n".
+							"Content-Transfer-Encoding: 8bit\r\n\r\n".
+							$message_html."\r\n\r\n".
+							"--".$mime_boundary."--\r\n";
+					
+
+					/* Sends the mail */
+					$mail_success = mail($to,$subject,$message,$headers);
+				}
+				
+						
+				if($module == 'zend'){
+								
+					if(version_compare(PHP_VERSION, '5.0.0', '>=')){			
+								
+						$zf_path = WP_CONTENT_DIR . '/themes/' . WPSHOP_THEME_NAME . '/lib/';
+						
+						set_include_path('.' 
+							. PATH_SEPARATOR . $zf_path
+							. PATH_SEPARATOR . get_include_path() 
+						);
+
+						include_once 'Zend/Mail.php';		
+										
+						$mail 	= new Zend_Mail('UTF-8');	
+						$mail->setHeaderEncoding(Zend_Mime::ENCODING_BASE64);
+						$mail->setFrom($admin_email_address,$OPTION['wps_shop_name']);
+						$mail->addTo($to);
+						$mail->setSubject($subject);
+						$mail->setBodyText($message_txt);
+						$mail->setBodyHtml($message_html);
+						$mail->send();
+						
+					}
+					else {
+						echo "<div class='error'>".__('Attention: Confirmation-Email was not sent.','wpShop').' '. 
+									__('Reason: Zend Mime module requires at least PHP version 5, you are using a PHP version lower than that!','wpShop').' '.
+									__('Please contact your host to upgrade to version 5.','wpShop').
+							"</div>";
+					}		
+				}
+					
+		return $mail_success;
+		}
+
+		
+		function email_confirmation($order,$PDT_DATA){
+
+			global $OPTION;									
+			$VOUCHER = load_what_is_needed('voucher');		
+			
+
+							$to 					= $order[email];					
+							$subject_str			= __('Thank you for: %PDT_DATA_itemname%','wpShop');						
+							$subject 				= str_replace("%PDT_DATA_itemname%",$PDT_DATA[itemname],$subject_str);		
+							
+														
+							if(strlen(WPLANG)< 1){  // shop runs in English 
+								$filename			= WP_CONTENT_DIR.'/themes/'. WPSHOP_THEME_NAME .'/email/email-confirmation.html';
+							}
+							else {					// shops runs in another language 
+								$filename 			= WP_CONTENT_DIR.'/themes/'. WPSHOP_THEME_NAME .'/email/'.WPLANG.'-email-confirmation.html';
+							}
+						
+							$message				= file_get_contents($filename);
+							$admin_email_address	= $OPTION['wps_shop_email'];
+							$domain 				= utf8_decode($OPTION['wps_shop_name']); 	
+											
+							$em_logo_path 	= get_bloginfo('template_directory') .'/images/logo/' . $OPTION['wps_email_logo'];	
+							$message		= str_replace('[##Email-Logo##]', $em_logo_path, "$message");						
+							$message		= str_replace('[##biz##]',$OPTION['wps_shop_name'], "$message");
+							$message		= str_replace('[##name##]', $order[f_name].' '.$order[l_name] , "$message");	
+							$message		= str_replace('[##tracking-id##]', $order[tracking_id] , "$message");	
+												
+							if($PDT_DATA['pay_m'] == 'authn'){
+								$CART 		= show_cart($order);
+							}
+							elseif($PDT_DATA['pay_m'] == 'cc_wp'){
+								$CART 		= show_cart($order);
+							} 
+							elseif($PDT_DATA['pay_m'] == 'paypal_ipn'){
+								$CART 		= show_cart($order,$PDT_DATA['custom']);
+							}	 
+							else {
+								$CART 		= show_cart($order);
+							}
+							
+							if($CART[status] == 'filled'){
+								$email_order = NULL;
+								foreach($CART[content] as $v){
+								
+									$details 	= explode("|",$v);
+									$attributes = display_attributes($details[7]);
+									$attributes = "<span style='font-size: 0.8em; margin-left: 10px;'>" . $attributes . "</span>";
+									
+									$personalization 	= retrieve_personalization($details[0]);								
+									$personal_wrap 		= "<span style='font-size: 0.8em;'>" . $personalization. "</span>";	
+													
+									if(strlen(WPLANG) > 0){
+										#$attributes = utf8_decode_custom($attributes);
+										#$details[2] = utf8_decode_custom($details[2]);
+									}														
+									$details[3] = format_price($details[3]);		
+									$details[4] = format_price($details[4]);
+									
+															
+									$email_order .= "
+										<tr>
+											<td>$details[5]</td
+											<td>$details[2] $attributes $personal_wrap</td>
+											<td>$details[1]</td>
+											<td>";
+												$email_order .= $details[3]; 
+												$email_order .= " " . $OPTION['wps_currency_code'];
+												$email_order .= "</td>
+											<td>";
+												$email_order .= $details[4]; 
+												$email_order .= " " . $OPTION['wps_currency_code']; 
+											$email_order .= "</td>
+										</tr>								
+									";
+									
+									
+								}
+								
+								$Subtotal 		= __('Subtotal:','wpShop');
+								$Shipping_fee	= __('Shipping Fee','wpShop');
+								$minus_voucher	= __('- Voucher','wpShop');
+								$Total			= __('Total:','wpShop');	
+								
+								$CART[total_price]		= $CART[total_price];
+								$order[shipping_fee]	= $order[shipping_fee];
+								$order[amount] 			= $order[amount];
+									
+								$email_order .= "	
+									<tr>
+										<td colspan='4' align='right'>
+										<b>$Subtotal</b>
+										</td>
+										<td>";
+											$email_order .= format_price($CART[total_price]); 
+											$email_order .= " " . $OPTION['wps_currency_code'];
+										$email_order .= "</td>
+									</tr>";
+								
+								// voucher 
+								if(($order[voucher] != 'non')&&($VOUCHER->code_exist($order[voucher]))){
+								
+									$TOTAL_AM 	= $CART[total_price];
+									$vdata 		= $VOUCHER->subtract_voucher($TOTAL_AM,$order);	
+
+									$email_order .= "						
+									<tr>
+										<td colspan='4' align='right'>$minus_voucher</td>
+										<td>";
+											$email_order .= format_price($vdata[subtr_am]); 
+											$email_order .= " " . $OPTION['wps_currency_code'];
+										$email_order .= "</td>
+									</tr>";
+								}
+								
+								$tax_data = tax_email_confirm_addition($CART,$order);		
+								//taxes without shipping costs
+								if(($tax_data['display'] == 'yes')&&($tax_data['without_ship'] == 'yes')&&($tax_data['tax_info'] != 'no_show')){
+									$email_order .= "
+									<tr>
+										<td colspan='4' align='right'>$tax_data[tax_info]</td>
+										<td>";
+											$email_order .= round_tax_amount($tax_data['amount']); 
+											$email_order .= " " . $OPTION['wps_currency_code'];
+										$email_order .= "</td>
+									</tr>";
+								}
+								
+								$email_order .= "
+								<tr>
+									<td colspan='4' align='right'>$Shipping_fee</td>
+									<td>";
+										$email_order .= format_price($order[shipping_fee]); 
+										$email_order .= " " . $OPTION['wps_currency_code'];  
+									$email_order .= "</td>
+								</tr>";
+								
+								
+								//taxes with shipping costs
+								if(($tax_data['display'] == 'yes')&&($tax_data['with_ship'] == 'yes')&&($tax_data['tax_info'] != 'no_show')){
+									$email_order .= "
+									<tr>
+										<td colspan='4' align='right'>$tax_data[tax_info]</td>
+										<td>";
+											$email_order .= round_tax_amount($tax_data['amount']); 
+											$email_order .= " " . $OPTION['wps_currency_code'];
+										$email_order .= "</td>
+									</tr>";
+								}								
+								
+								$TOTAL_AM 	= ($CART['total_price'] - $vdata['subtr_am']) + $order['shipping_fee'] + $tax_data['amount'];	
+																		
+								$email_order .= "
+									<tr>
+										<td colspan='4' align='right'>
+											<b>$Total</b><br/>";								
+											
+											if (($OPTION['wps_shop_country']=='US' && ($OPTION['wps_tax_info_enable'] && $OPTION['wps_salestax_sourcing_r'] =='taxincluded')) || $OPTION['wps_shop_country']!='US' && $OPTION['wps_tax_info_enable'])
+											{
+												$email_order .= __('incl.','wpShop') . $OPTION['wps_tax_percentage'] . "% ".$OPTION['wps_tax_abbr'];
+											}
+											
+										$email_order .= "</td>";
+										$email_order .= "<td>";
+										$email_order .= format_price($TOTAL_AM); 
+										$email_order .= " " . $OPTION['wps_currency_code'];
+										$email_order .= "</td>
+									</tr>
+								";
+							}
+							
+							
+							// Bank transfer account info...
+							if($order[p_option] == 'transfer'){
+							
+								$bac_owner 	= $OPTION['wps_banktransfer_account_owner'];
+								$bankname 	= $OPTION['wps_banktransfer_bankname'];
+								$blz 		= $OPTION['wps_banktransfer_bankno'];
+								$account_no = $OPTION['wps_banktransfer_accountno'];
+								$iban 		= $OPTION['wps_banktransfer_iban'];
+								$bic 		= $OPTION['wps_banktransfer_bic'];
+								$cur		= $OPTION['wps_currency_code'];
+								$amount 	= __('Please transfer the amount of %AMOUNT% to our bank with this data:','wpShop');
+								$oam		= NULL;
+									$oam .= format_price($TOTAL_AM); 
+									$oam .= " " . $OPTION['wps_currency_code'];
+								
+								$amount		= str_replace('%AMOUNT%',$oam,$amount);
+							
+								$btinfo =  
+								"<br/><br/>$amount<br/><br/>
+								
+								<table style='background gainsboro';>
+								<tr><td width='150'>". __('Recipient:','wpShop') . "</td><td>$bac_owner</td></tr>
+								<tr><td>". __('for:','wpShop')."</td><td>$PDT_DATA[itemname]</td></tr>
+								<tr><td>". __('Bank:','wpShop')."</td><td>$bankname</td></tr>";
+								if ($OPTION['wps_banktransfer_routing_enable']){
+									$btinfo .="<tr><td>" . $OPTION['wps_banktransfer_routing_text'] . "</td><td>$blz</td></tr>";
+								}
+								$btinfo .="<tr><td>". __('Account:','wpShop')."</td><td>$account_no</td></tr>
+								";
+								
+								if(!empty($iban)){
+									$btinfo .= "<tr><td>IBAN:</td><td>$iban</td></tr>";
+								}
+								if(!empty($bic)){				
+									$btinfo .= "<tr><td>BIC/SWIFT:</td><td>$bic</td></tr>";
+								}
+								$btinfo .= "</table>						
+								<br/><br/>".__('When the Amount has been transfered to our Account, we will begin processing your Order','wpShop').
+								"<br/><br/>";	
+
+							$message	= str_replace('[##bank-transfer-info##]',$btinfo, "$message");	
+							} 
+							else {
+							$message	= str_replace('[##bank-transfer-info##]',NULL, "$message");
+							}
+							
+							$message	= str_replace('[##order##]', $email_order , "$message");	
+							
+							
+							
+							// get alternative txt for mime mail or for just txt mails /////////////////////////////////////////////////////////
+						if(WPSHOP_EMAIL_FORMAT_OPTION == 'txt' || WPSHOP_EMAIL_FORMAT_OPTION == 'mime'){
+						
+							$filename  		= substr($filename,0,strrpos($filename,"."));
+							$filename_txt 	= $filename.'.txt';
+							$message_txt 	= file_get_contents($filename_txt);				
+							
+							$message_txt	= str_replace('[##biz##]',$OPTION['wps_shop_name'], "$message_txt");
+							$message_txt	= str_replace('[##name##]', $order[f_name].' '.$order[l_name] , "$message_txt");	
+							$message_txt	= str_replace('[##tracking-id##]', $order[tracking_id] , "$message_txt");						
+							
+							if($CART[status] == 'filled'){	// the order items
+							$email_order = NULL;
+								foreach($CART[content] as $v){
+								
+									$details 	= explode("|",$v);		
+									
+									if(strlen($details[7]) > 0){
+										$attributes = display_attributes($details[7],'txt');
+									}
+									else {
+										$attributes = NULL;
+									}
+									
+									$personalization 	= retrieve_personalization($details[0],'txt_mail');					
+									$personal_wrap		= (strlen($personalization) > 0 ? "\n" . $personalization : NULL );
+									
+									if(strlen(WPLANG) > 0){
+										#$attributes = utf8_decode_custom($attributes);
+										#$details[2] = utf8_decode_custom($details[2]);
+									}
+									$details[3] = format_price($details[3]);
+									$details[4] = format_price($details[4]);
+															
+									$email_order .= "$details[1] x $details[5] - $details[2] $attributes (".__('item price','wpShop').": $details[3] ". $OPTION['wps_currency_code'] . ") = $details[4] " . $OPTION['wps_currency_code'].$personal_wrap."\n\n";
+								}
+								
+							$Subtotal 		= __('Subtotal:','wpShop');	
+							$Total			= __('Total:','wpShop');	
+													
+							$email_order .= "\n\n\n";
+							$email_order .= "$Subtotal ".format_price($CART['total_price'])." " . $OPTION['wps_currency_code']."\n";	
+							
+							//taxes without shipping costs
+							if(($tax_data['display'] == 'yes')&&($tax_data['without_ship'] == 'yes')&&($tax_data['tax_info'] != 'no_show')){
+								$email_order .= $tax_data['tax_info'] . round_tax_amount($tax_data['amount']) .' '. $OPTION['wps_currency_code']."\n";
+							}
+							
+							//shipping fees
+							$email_order .= __('Shipping Fee','wpShop').": ".format_price($order['shipping_fee'])." " . $OPTION['wps_currency_code']."\n";
+							
+							//taxes with shipping costs
+							if(($tax_data['display'] == 'yes')&&($tax_data['with_ship'] == 'yes')&&($tax_data['tax_info'] != 'no_show')){				
+								$email_order .= $tax_data['tax_info'] . round_tax_amount($tax_data['amount']) .' '. $OPTION['wps_currency_code']."\n";
+							}
+							$email_order .= "$Total ".format_price($order['amount'])." " . $OPTION['wps_currency_code']." (".__('incl.','wpShop').$OPTION['wps_tax_percentage'] ."% ". $OPTION['wps_tax_abbr'].")"."\n";
+
+							}					
+							
+							$message_txt	= str_replace('[##order##]', $email_order , "$message_txt");
+							
+							
+							// Bank transfer account info if needed... 
+							if($order[p_option] == 'transfer'){
+
+								$amount 	= __('Please transfer the amount of %AMOUNT% using the following information:','wpShop');
+								$oam		= format_price($order['amount']) .' '.$OPTION['wps_currency_code'];		
+								$amount		= str_replace('%AMOUNT%',$oam,$amount);
+							
+								$btinfo =  "\n\n$amount\n\n";
+								$btinfo	.=  __('Recipient:','wpShop').' '.$bac_owner ."\n";
+								$btinfo	.=  __('for:','wpShop').' '. $PDT_DATA[itemname] ."\n";	
+								$btinfo	.=  __('Bank:','wpShop').' '.$bankname."\n";
+								if ($OPTION['wps_banktransfer_routing_enable']){
+									$btinfo	.=  $OPTION['wps_banktransfer_routing_text'].' '. $blz ."\n";
+								}
+								
+								$btinfo	.=  __('Account:','wpShop').' '.$bac_owner ."\n";
+								if(!empty($iban)){
+									$btinfo .= "IBAN: $iban"."\n";
+								}
+								if(!empty($bic)){				
+									$btinfo .= "BIC/SWIFT: $bic"."\n";
+								}
+								
+								$btinfo	.= "\n".__('When the Amount has been transfered to our Account, we will begin processing your Order','wpShop');
+								
+								$message_txt	= str_replace('[##bank-transfer-info##]',$btinfo,"$message_txt");
+							}
+							else {
+								$message_txt	= str_replace('[##bank-transfer-info##]',NULL, "$message_txt");
+							}
+							
+						}	
+							
+						switch(WPSHOP_EMAIL_FORMAT_OPTION){
+						
+							//change.9.10
+							
+							case 'mime':
+								$this->mime_mail($to,$subject,$message,$message_txt,$admin_email_address,$domain,'zend'); // zend
+								#$this->mime_mail($to,$subject,$message,$message_txt,$admin_email_address,$domain,'native'); // native
+								if($OPTION['wps_email_confirmation_dbl']=='yes'){
+									$subject = 'COPY - '.$subject;																		
+									$this->mime_mail($admin_email_address,$subject,$message,$message_txt,$admin_email_address,$domain,'zend'); 	// zend	 
+									#$this->mime_mail($admin_email_address,$subject,$message,$message_txt,$admin_email_address,$domain,'native');  // native
+								}
+							break;
+							
+							case 'txt':
+								$this->send_mail($to,$subject,$message_txt,$admin_email_address,$domain);
+								
+								if($OPTION['wps_email_confirmation_dbl']=='yes'){
+									$subject = 'COPY - '.$subject;																		
+									$this->send_mail($admin_email_address,$subject,$message_txt,$admin_email_address,$domain); 				
+								}
+								
+							break;
+						}
+		}
+
+		
+		function email_owner_order_notification($PDT_DATA,$search,$replace){
+						
+			global $OPTION;
+			
+							$to 		= $OPTION['wps_shop_email'];
+							$subject 	= __('You received - ','wpShop') . $PDT_DATA[itemname];					
+							
+							$filename	= 'email-owner-order-notification.txt';
+							$path		= (strlen(WPLANG)< 1 ? WP_CONTENT_DIR.'/themes/'. WPSHOP_THEME_NAME .'/email/' : WP_CONTENT_DIR.'/themes/'. WPSHOP_THEME_NAME .'/email/' . WPLANG.'-'); 
+							$message	= file_get_contents($path.$filename);			
+
+							$message_shop_owner 	= str_replace($search,$replace,$message);			
+							$admin_email_address	= $OPTION['wps_shop_email'];
+							$domain					= get_option('home');
+							$domain 				= substr($domain, 7); 
+							
+							$this->send_mail($to,$subject,$message_shop_owner,$admin_email_address,$domain);	
+							
+		return 'DONE';
+		}
+
+		
+		function email_owner_pending_payment_notification($search,$replace,$option){
+							
+			global $OPTION;
+							
+					switch($option){
+					
+						case 'completed':
+									
+							$to 		= $OPTION['wps_shop_email'];
+							$subject 	= __('A Pending PayPal Payment has been Completed','wpShop');
+							$filename	= 'email-owner-completed-pending-payment.txt';
+							
+						break;	
+						
+						case 'new':
+						
+							global $PDT_DATA;
+									
+							$to 		= $OPTION['wps_shop_email'];
+							$subject 	= __('PENDING! You received - ','wpShop') . $PDT_DATA[itemname];
+							$filename	= 'email-owner-new-pending-payment.txt';
+							
+						break;	
+					}	
+						
+							$path		= (strlen(WPLANG)< 1 ? 'wp-content/themes/'. WPSHOP_THEME_NAME .'/email/' : 'wp-content/themes/'. WPSHOP_THEME_NAME .'/email/' . WPLANG.'-'); 
+							$message	= file_get_contents($path.$filename);			
+
+							$message_shop_owner 	= str_replace($search,$replace,$message);			
+							$admin_email_address	= $OPTION['wps_shop_email'];
+							$domain					= get_option('home');
+							$domain 				= substr($domain, 7); 
+							
+							$this->send_mail($to,$subject,$message_shop_owner,$admin_email_address,$domain);	
+									
+		return 'DONE';
+		}
+
+		
+		function email_owner_lkey_warning($fname,$search,$replace){
+						
+			global $OPTION;
+						
+							$to 		= $OPTION['wps_shop_email'];
+							$subject 	= __('Your license keys for %FNAME% are running low','wpShop');
+							$subject 	= str_replace("%FNAME%",$fname,$subject);
+							
+							$filename	= 'email-owner-lkey-warning.txt';
+							$path		= (strlen(WPLANG)< 1 ? 'wp-content/themes/'. WPSHOP_THEME_NAME .'/email/' : 'wp-content/themes/'. WPSHOP_THEME_NAME .'/email/' . WPLANG.'-'); 
+							$message	= file_get_contents($path.$filename);			
+
+							$message_shop_owner 	= str_replace($search,$replace,$message);			
+							$admin_email_address	= $OPTION['wps_shop_email'];
+							$domain					= get_option('home');
+							$domain 				= substr($domain, 7); 
+							
+							$this->send_mail($to,$subject,$message_shop_owner,$admin_email_address,$domain);	
+						
+		return 'DONE';
+		}
+	
+	
+		function stock_low_email($ID_item,$search,$replace){
+				/*
+				$to 		= $OPTION['wps_stock_warn_email'];
+				$subject 	= __('Warning: amount of article-id %ID_ITEM% is running low','wpShop');
+				$subject	= str_replace("%ID_ITEM%",$ID_item,$subject);			// cid2item_id($ID_item)
+				$filename	= 'email-owner-low-stock-warning.txt';
+							
+				$path		= (strlen(WPLANG)< 1 ? 'wp-content/themes/'.WPSHOP_THEME_NAME.'/email/' : 'wp-content/themes/'.WPSHOP_THEME_NAME.'/email/' . WPLANG.'-'); 		
+				$message	= file_get_contents($path.$filename);			
+
+				$message_shop_owner 	= str_replace($search,$replace,$message);			
+				$admin_email_address	= $OPTION['wps_shop_email'];
+				$domain					= $OPTION['home'];
+				$domain 				= substr($domain, 7); 
+							
+				$this->send_mail($to,$subject,$message_shop_owner,$admin_email_address,$domain);	//change.9.10
+				*/	
+		}
+
+	
+		function email_new_user_welcome($to,$search,$replace){
+					
+			global $OPTION;		
+			
+			$EMAIL 	= load_what_is_needed('email');		//change.9.10
+					
+				$subject 	= __('You have succesfully registered as a member of','wpShop').' '.$OPTION['blogname'];										   
+				$filename	= 'email-new-user-welcome.txt';
+				$path		= (strlen(WPLANG)< 1 ? 'email/' : 'email/' . WPLANG.'-'); 
+				$message	= file_get_contents($path.$filename);			
+
+				$message_shop_owner 	= str_replace($search,$replace,$message);			
+				$admin_email_address	= $OPTION['wps_shop_email'];
+				$domain					= get_option('home');
+				$domain 				= substr($domain, 7); 
+				
+				$this->send_mail($to,$subject,$message_shop_owner,$admin_email_address,$domain);		//change.9.10
+						
+		return 'DONE';
+		}
+			
+			
+		function email_new_user_owner_notify($email,$search,$replace){
+				
+				global $OPTION;
+
+				$EMAIL 		= load_what_is_needed('email');		//change.9.10
+				
+				$subject 	= __('A new member has registered on','wpShop').' '.$OPTION['blogname'];
+				$filename	= 'email-new-user-owner-notification.txt';
+				$path		= (strlen(WPLANG)< 1 ? 'email/' : 'email/' . WPLANG.'-'); 
+				$message	= file_get_contents($path.$filename);			
+
+				$message_shop_owner 	= str_replace($search,$replace,$message);			
+				$admin_email_address	= $OPTION['wps_shop_email'];
+				$to						= $admin_email_address;
+				$domain					= get_option('home');
+				$domain 				= substr($domain, 7); 
+				
+				$this->send_mail($to,$subject,$message_shop_owner,$admin_email_address,$domain);		//change.9.10
+		}
+			
+			
+		function email_password_reset($to,$search,$replace){
+
+			global $OPTION;
+					
+			$EMAIL 	= load_what_is_needed('email');		//change.9.10		
+					
+				$subject 	= __('Your password for your','wpShop').' '.$OPTION['blogname'].' '.__('account has been reset','wpShop');											   
+				$filename	= 'email-password-reset.txt';
+				$path		= (strlen(WPLANG)< 1 ? WP_CONTENT_DIR.'/themes/'. WPSHOP_THEME_NAME .'/email/' : WP_CONTENT_DIR.'/themes/'. WPSHOP_THEME_NAME .'/email/' . WPLANG.'-');
+				
+				$message	= file_get_contents($path.$filename);			
+
+				$message_shop_owner 	= str_replace($search,$replace,$message);			
+				$admin_email_address	= $OPTION['wps_shop_email'];
+				$domain					= get_option('home');
+				$domain 				= substr($domain, 7); 
+				
+				$this->send_mail($to,$subject,$message_shop_owner,$admin_email_address,$domain);		//change.9.10
+						
+		return 'DONE';
+		}
+	}
+?>

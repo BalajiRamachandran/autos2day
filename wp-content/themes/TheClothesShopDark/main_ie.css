@@ -1,0 +1,53 @@
+/*IE does not support display:table; use floats instead*/
+#header .centeringWrap {display:inline-block;}
+#header h1 {float:left;}
+#header ul {float:left;}
+#header .primary_r, #header .topLinks ul {float:right;}
+#header ul li , #header ul li a {float:left;}
+#header ul li {display:inline;}
+#header ul li a {padding:10px 0 15px 16px;}
+/*here using a different method to center the category navi below the logo*/
+#header .MainCatsNav {float:left;width:100%;position:relative;}
+#header .MainCatsNav ul  { clear:left;float:left;list-style:none;position:relative;left:50%;text-align:center;border:0 none;}
+#header .MainCatsNav ul li {display:block;float:left;position:relative;right:50%;border:1px solid #543a37;border-right:0 none;border-left:0 none;}
+
+
+/*Main Category Navigation Downs*/
+#header .MainCatsNav ul, #header .MainCatsNav ul ul {z-index:900;}
+#header .MainCatsNav ul li {position:relative;}
+#header .MainCatsNav ul ul {position:absolute;display:none;top:25px;background:url(images/lowOpbgd.png);left:0;}
+#header .MainCatsNav ul ul li, #header .MainCatsNav ul ul li a {text-align:left;display:block;float:none;border:0 none;right:0;}
+#header .MainCatsNav ul ul li a {padding:10px;text-decoration:none;}
+#header .MainCatsNav ul ul li a:focus, #header .MainCatsNav ul ul li a:hover {text-decoration:underline;color:#f6f6f6;}
+
+/* LOGO TOP LEFT */
+#header .logoL .MainCatsNav {float:none;clear:both;}
+
+/* LOGO TOP LEFT and LRSC Links checked for top right*/
+#header .logoL .centeringWrap, #header .logoL_alt .centeringWrap {display:block;clear:both;float:left;width:100%;}
+#header .logoL .topLinks {float:right;width:574px;}
+#header .logoL .primary_nav, #header .logoL h1 {display:block;}
+#header .logoL h1, #header .logoL_alt h1 {float:left;background:url(images/logoL-trans.png) no-repeat top;}
+#header .logoL ul li a {padding:10px 0 7px 16px;}
+
+/*too much vertical whitespace between the featured area links*/
+.subcatnavi a {display:inline-block;padding:0;}
+
+/*single product page*/
+#footnotes .l1 {display:block;}
+#footnotes li {display:block;float:left;width:25%;}
+#footnotes .print a {padding-top:1px;}
+#footnotes .share a {padding-top:5px;}
+#footnotes .subscribe a {padding-top:4px;}
+.prodDetails {display:inline-block;}
+.typeradioselect, .select {margin-bottom:18px;}
+#colorInput, #sizeInput {height:0;}/*fix the extra space that appears when selecting colour and size*/
+#createAccount #pt2 input, #createAccount #pt3 input {margin-left:-15px;}/*fix for IE inherited margin bug on input form elements*/
+/*view cart button has too much top padding*/
+#vCart {padding-top:0;}
+
+/*sidebar appears funny - needs hasLayout*/
+.widget_faq ul, .csw, .widgetPadding  {position:relative;}
+
+/*footer does not sit properly at bottom*/
+.footer_notes {padding:0;margin-top:9px;}

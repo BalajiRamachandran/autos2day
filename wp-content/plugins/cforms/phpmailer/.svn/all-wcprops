@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer
+END
+cforms_phpmailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer/cforms_phpmailer.php
+END
+phpmailer.lang-en.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer/phpmailer.lang-en.php
+END
+____lgpl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer/____lgpl.txt
+END
+class.phpmailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer/class.phpmailer.php
+END
+class.pop3.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer/class.pop3.php
+END
+class.smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer/class.smtp.php
+END
+php.ini-example
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/bramkas/!svn/ver/21/trunk/beta/wp-content/plugins/cforms/phpmailer/php.ini-example
+END
